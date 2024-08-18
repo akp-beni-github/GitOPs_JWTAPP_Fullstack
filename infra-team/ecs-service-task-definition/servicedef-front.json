@@ -1,0 +1,46 @@
+{
+    "serviceName": "frontend-service",
+    "cluster": "jwt-cluster",
+    "loadBalancers": [
+    {
+        "targetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-1:471112782479:targetgroup/tg-fargate-frontend-service/c65c113ead364520",
+        "containerName": "frontend-service",
+        "containerPort": 443
+    }
+    ],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "platformVersion": "1.4.0",
+    "taskDefinition": "arn:aws:ecs:ap-southeast-1:471112782479:task-definition/frontend-service:7",
+    "deploymentConfiguration": {
+        "deploymentCircuitBreaker": {
+            "enable": true,
+            "rollback": true
+        },
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 0
+    },
+    "placementConstraints": [],
+    "placementStrategy": [],
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-0e113030a9024d5b2"
+            ],
+            "securityGroups": [
+                "sg-0bcf0bd4e41056fb2"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    },
+    "healthCheckGracePeriodSeconds": 250,
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "ECS"
+    },
+    "enableECSManagedTags": true,
+    "propagateTags": "NONE",
+    "enableExecuteCommand": true
+
+    
+}
