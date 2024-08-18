@@ -1,0 +1,42 @@
+
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "user1@gmail.com",
+    "password": "password1"
+}
+
+##############
+
+POST http://localhost:3001/api/auth/signup
+Content-Type: application/json
+
+{
+    "username": "user1@gmail.com",
+    "password": "password1"
+}
+
+##############
+DELETE http://localhost:3001/api/auth/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjFAZ21haWwuY29tIiwiaWF0IjoxNzIzMTEyOTg0fQ.cJv8EG-AvqernM27bC8B39lW__o4XUInNGw1UMfnG9k"
+    }
+
+##############
+GET http://localhost:3001/api/auth/token
+Content-Type: application/json
+
+{
+
+}
+
+##############
+GET http://localhost:3001/api/protected/test
+Content-Type: application/json
+
+{
+    
+}
